@@ -1,0 +1,32 @@
+{
+  "id": "sticky-folders",
+  "title": "Sticky Folders",
+  "version": "1.0.0",
+  "description": "Makes folder headings \"sticky\" as you scroll through directories, allowing you to keep track of where you are in your folders.",
+  "url": "https://www.patreon.com/KristianSerrano",
+  "download": "",
+  "manifest": "",
+  "compatibility": {
+    "minimum": "11",
+    "verified": "11"
+  },
+  "languages": [],
+  "esmodules": [
+    "modules/sticky-folders.js"
+  ],
+  "styles": [
+    "styles/sticky-folders.css"
+  ],
+  "flags": {
+    "hotReload": {
+      "extensions": [
+        "js",
+        "css"
+      ],
+      "paths": [
+        "modules",
+        "styles"
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.app.sidebar-popout {
+    backdrop-filter: none;
+}
+
+.sidebar-tab {
+    --folder-header-height: 38px;
+    --default-folder-color: var(--color-border-dark-tertiary);
+    background: var(--color-border-dark-secondary);
+
+    & .directory-list {
+        --context-menu-z-index: 10000000;
+        --folder-header-height: 38px;
+
+        & .folder-header {
+            position: sticky !important;
+
+            &>#context-menu {
+                top: calc(100% + 1px);
+                z-index: var(--context-menu-z-index);
+            }
+        }
+
+        & .directory-item {
+
+            &>.folder-header,
+            .directory-item.collapsed>.folder-header {
+                background: var(--default-folder-color);
+            }
+
+            &>header>#context-menu,
+            >#context-menu {
+                z-index: var(--context-menu-z-index);
+            }
+
+        }
+
+        & .folder .subdirectory {
+            border-left-color: var(--default-folder-color);
+        }
+
+        &>.folder>.folder-header {
+            top: 0;
+
+            &+.subdirectory>.folder>.folder-header {
+                top: var(--folder-header-height);
+
+                &+.subdirectory>.folder>.folder-header {
+                    top: calc(var(--folder-header-height) * 2);
+                }
+            }
+        }
+    }
+}
