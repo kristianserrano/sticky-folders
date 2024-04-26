@@ -2,36 +2,39 @@
     backdrop-filter: none;
 }
 
-.sidebar-tab {
+.directory {
     --folder-header-height: 38px;
     --default-folder-color: var(--color-border-dark-tertiary);
-    background: var(--color-border-dark-secondary);
+    background-color: var(--color-border-dark-secondary);
 
     & .directory-list {
-        --context-menu-z-index: 10000000;
+        --context-menu-z-index: 100000;
         --folder-header-height: 38px;
 
         & .folder-header {
             position: sticky !important;
+        }
 
-            &>#context-menu {
-                top: calc(100% + 1px);
-                z-index: var(--context-menu-z-index);
+        & .folder-header>#context-menu,
+        & .directory-item #context-menu,
+        .window-app & #context-menu {
+            --adjusted-context-spacing: calc(100% + 1px);
+            z-index: var(--context-menu-z-index);
+
+            &.expand-up,
+            &.expand-down {
+                top: var(--adjusted-context-spacing);
             }
         }
 
         & .directory-item {
-
-            &>.folder-header,
-            .directory-item.collapsed>.folder-header {
-                background: var(--default-folder-color);
+            &.folder .folder-header {
+                background-color: var(--default-folder-color);
             }
 
-            &>header>#context-menu,
-            >#context-menu {
-                z-index: var(--context-menu-z-index);
+            &.folder .context{
+                background-color: #23221d !important;
             }
-
         }
 
         & .folder .subdirectory {

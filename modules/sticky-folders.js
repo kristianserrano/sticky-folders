@@ -1,12 +1,16 @@
 const MODULE_ID = 'sticky-folders';
 
-Hooks.on('renderSidebarTab', (directory, html, data) => {
-    const list = directory.element[0].querySelectorAll('.directory-list .folder');
-    let int = 10000000;
+const hookEvents = ['changeSidebarTab', 'renderSidebarTab'];
 
-    for (const item of list) {
-        int -= 1;
-        item.style.zIndex = int;
-        item.querySelector('.folder-header').style.zIndex = int;
-    }
-});
+for (const hookEvent of hookEvents) {
+    Hooks.on(hookEvent, (directory, html, data) => {
+        let int = 1000;
+        const folders = directory.element[0].querySelectorAll('.directory-list .folder');
+
+        for (const folder of folders) {
+            int -= 1;
+            folder.style.zIndex = int;
+            folder.querySelector('.folder-header').style.zIndex = int;
+        }
+    });
+}
