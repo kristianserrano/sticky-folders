@@ -2,7 +2,7 @@
 
 ## v1.0.2
 
-- CSS selector fixes to prevent accidentally targeting the list of characters in the player configuration.
+- Fixes CSS selector to prevent accidentally targeting the list of characters in the player configuration.
 
 ## v1.0.1
 
