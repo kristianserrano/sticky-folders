@@ -24,8 +24,8 @@
         "css"
       ],
       "paths": [
-        "modules",
-        "styles"
+        "modules/sticky-folders.js",
+        "styles/sticky-folders.css"
       ]
     }
   }
