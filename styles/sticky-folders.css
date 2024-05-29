@@ -4,16 +4,20 @@
 
 .sidebar-tab.directory,
 .sidebar-tab .directory {
-    --folder-header-height: 38px;
+    --folder-header-height: calc(1lh + 12px);
     --default-folder-color: var(--color-border-dark-tertiary);
     background-color: var(--color-border-dark-secondary);
 
     & .directory-list {
         --context-menu-z-index: 100000;
-        --folder-header-height: 38px;
+
+        & .folder {
+            border: none;
+        }
 
         & .folder-header {
             position: sticky !important;
+            border: none;
         }
 
         & .folder-header>#context-menu,
@@ -33,13 +37,13 @@
                 background-color: var(--default-folder-color);
             }
 
-            &.folder .context{
+            &.folder .context {
                 background-color: #23221d !important;
             }
         }
 
-        & .folder .subdirectory {
-            border-left-color: var(--default-folder-color);
+        & .subdirectory {
+            border-left: 0.5cqw solid var(--default-folder-color);
         }
 
         &>.folder>.folder-header {
@@ -49,7 +53,7 @@
                 top: var(--folder-header-height);
 
                 &+.subdirectory>.folder>.folder-header {
-                    top: calc(var(--folder-header-height) * 2);
+                top: calc(var(--folder-header-height) * 2);
                 }
             }
         }
