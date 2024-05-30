@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.3
+
+- Applies sticky to fourth level folder header.
+- Creates a stronger visual left border to emphasize the containing folder.
+- Adds borders to visually separate the folder headers.
+
 ## v1.0.2
 
 - Fixes CSS selector to prevent accidentally targeting the list of characters in the player configuration.
