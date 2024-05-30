@@ -46,7 +46,7 @@
         }
 
         & .subdirectory {
-            border-left: 1em solid var(--default-folder-color);
+            border-left: 0.5em solid var(--default-folder-color);
             border-bottom: none;
         }
 
