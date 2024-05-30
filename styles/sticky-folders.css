@@ -9,15 +9,18 @@
     background-color: var(--color-border-dark-secondary);
 
     & .directory-list {
+        --small-gap: 3px;
         --context-menu-z-index: 100000;
 
         & .folder {
+            padding-left: var(--small-gap);
             border: none;
         }
 
         & .folder-header {
             position: sticky !important;
             border: none;
+            border-top: var(--small-gap) solid black;
         }
 
         & .folder-header>#context-menu,
@@ -43,17 +46,22 @@
         }
 
         & .subdirectory {
-            border-left: 0.5cqw solid var(--default-folder-color);
+            border-left: 1em solid var(--default-folder-color);
+            border-bottom: none;
         }
 
         &>.folder>.folder-header {
             top: 0;
 
             &+.subdirectory>.folder>.folder-header {
-                top: var(--folder-header-height);
+                top: calc(var(--folder-header-height) + var(--small-gap));
 
                 &+.subdirectory>.folder>.folder-header {
-                top: calc(var(--folder-header-height) * 2);
+                    top: calc(var(--folder-header-height) * 2 + var(--small-gap) * 2);
+
+                    &+.subdirectory>.folder>.folder-header {
+                        top: calc(var(--folder-header-height) * 3 + var(--small-gap) * 3);
+                    }
                 }
             }
         }
