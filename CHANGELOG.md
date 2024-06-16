@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.4
+
+- Verified for Foundry VTT v12.
+
 ## v1.0.3
 
 - Applies sticky to fourth level folder header.
