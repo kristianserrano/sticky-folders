@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.5
+
+- Sets maximum core compatibility to v12 as v13 now has sticky folders baked in! This will be the last release of this module.
+
 ## v1.0.4
 
 - Verified for Foundry VTT v12.
